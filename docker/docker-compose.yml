@@ -1,0 +1,6 @@
+site:
+  build: site
+  ports :
+   - "180:80"
+  volumes:
+   - ./creative:/var/www/html/
