@@ -1,4 +1,4 @@
-site:
+hairstyle-new:
   build: site
   ports :
    - "180:80"
