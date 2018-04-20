@@ -19,14 +19,16 @@ hr.light {
 }
 
 a {
-  color: #F05F40;
+  /*color: #f05f40;*/
+  color: #ffffff;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 a:hover {
-  color: #f05f40;
+  /*color: #f05f40;*/
+  color: #ffffff;
 }
 
 h1,
@@ -110,7 +112,8 @@ img::-moz-selection {
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-  color: #F05F40;
+  /*color: #F05F40;*/
+  color: #FFFFFF;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
@@ -141,7 +144,8 @@ img::-moz-selection {
   #mainNav .navbar-nav > li.nav-item > a.nav-link,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
     /* color: rgba(255, 255, 255, 0.7); */
-    color: #f05F40;
+    /*color: #f05F40;*/
+    color: #ffffff;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
@@ -170,7 +174,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/header3.jpg");
+  background-image: url("../img/header4.jpg");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -284,7 +288,8 @@ header.masthead p {
 }
 
 .text-primary {
-  color: #F05F40 !important;
+  /*color: #F05F40 !important;*/
+  color: #FFFFFF !important;
 }
 
 .btn {
