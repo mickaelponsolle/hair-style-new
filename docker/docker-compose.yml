@@ -4,3 +4,21 @@ hairstyle-new:
    - "180:80"
   volumes:
    - ..:/var/www/html/
+database:
+  image: mysql:5.5
+  ports:
+   - "3306:3306"  
+  environment:
+     - MYSQL_ROOT_PASSWORD=password
+     - MYSQL_DATABASE=hair-style
+     - MYSQL_USER=hair-style
+     - MYSQL_PASSWORD=password
+phpmyadmin:
+   image: corbinu/docker-phpmyadmin
+   ports :
+    - "8080:80"
+   environment:
+    - MYSQL_USERNAME=root
+    - MYSQL_PASSWORD=password
+   links:
+    - database:mysql

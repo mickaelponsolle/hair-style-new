@@ -1,0 +1,1 @@
+CREATE TABLE `hair-style`.`hrs_livre_d_or` ( `ldo_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `ldo_nom` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , `ldo_mail` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , `ldo_message` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ) ENGINE = InnoDB;

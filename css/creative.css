@@ -82,7 +82,15 @@ img::-moz-selection {
   background: transparent;
 }
 
-#mainNav {
+#livredorNav {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#mainNav,#livredorNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -91,11 +99,11 @@ img::-moz-selection {
   transition: all 0.2s;
 }
 
-#mainNav .navbar-brand {
+#mainNav .navbar-brand,#livredorNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
   color: #F05F40;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-famiy: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -103,7 +111,9 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
-#mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
+#livredorNav .navbar-nav > li.nav-item > a.nav-link,
+#mainNav .navbar-nav > li.nav-item > a.nav-link:focus, 
+#livredorNav .navbar-nav > li.nav-item > a.nav-link:focus {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -117,7 +127,9 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
-#mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
+#livredorNav .navbar-nav > li.nav-item > a.nav-link.active,
+#mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active,
+#livredorNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
   color: #F05F40 !important;
   background-color: transparent;
 }
