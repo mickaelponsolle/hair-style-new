@@ -84,19 +84,18 @@ echo '<p class="text-light">basededonnee='.$ini_array["bdd"]["basededonnee"].'</
 
     var_dump($_POST);
 
-echo '<p class="text-light">name='.$_POST["name"].'</p>';
-echo '<p class="text-light">email='.$_POST["email"].'</p>';
-echo '<p class="text-light">message='.$_POST["message"].'</p>';
+echo '<p class="text-light">name='.$_POST['name'].'</p>';
+echo '<p class="text-light">email='.$_POST['email'].'</p>';
+echo '<p class="text-light">message='.$_POST['message'].'</p>';
 
-    if (isset($_POST['nom']) AND isset($_POST['email']) AND isset($_POST['message'])) {
-        // On utilise mysql_real_escape_string et htmlspecialchars par mesure de sécurité
-        $nom = mysql_real_escape_string(htmlspecialchars($_POST['nom']));
-        $email = mysql_real_escape_string(htmlspecialchars($_POST['email'])); // De même pour l'e-mail
-        $message = mysql_real_escape_string(htmlspecialchars($_POST['message'])); // De même pour le message
+    if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['message'])) {
+        $nom = mysqli_real_escape_string($conn, htmlspecialchars($_POST['name']));
+        $email = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email'])); 
+        $message = mysqli_real_escape_string($conn, htmlspecialchars($_POST['message'])); 
 
         if ((trim($nom) != '') && (trim($message) != '') && (substr_count($message, 'http') == 0)) {
           // On peut enregistrer
-          $result = mysqli_query($conn, "insert into LIVRE_D_OR (LDO_NOM, LDO_MAIL, LDO_MESSAGE) values('$nom', '$email', '$message')");
+          $result = mysqli_query($conn, "insert into hrs_livre_d_or (LDO_NOM, LDO_MAIL, LDO_MESSAGE) values('$nom', '$email', '$message')");
           if (!$result) {
               die('Requête invalide : ' . mysql_error());
           } else {
@@ -105,7 +104,7 @@ echo '<p class="text-light">message='.$_POST["message"].'</p>';
             // Envoi d'un mail 
             // ---------------------------------------
             $corpsMail = '<html><head><title>Titre</title></head><body>';
-            $corpsMail .= 'Nom : '.htmlspecialchars($_POST['nom']).'<br/>';
+            $corpsMail .= 'Nom : '.htmlspecialchars($_POST['name']).'<br/>';
             $corpsMail .= 'Adresse email : '.htmlspecialchars($_POST['email']).'<br/>';
 
             // Conversion des retours chariot
@@ -132,14 +131,14 @@ echo '<p class="text-light">message='.$_POST["message"].'</p>';
         </div>
         <hr class="my-4">
         <p class="mb-5 text-light">Vous pouvez ajouter un commentaire dans le livre d'or avec le formulaire suivant : </p>
-        <form class="form-horizontal" role="form" id="addCommentBlock" action="/livredor.php">
+        <form class="form-horizontal" role="form" id="addCommentBlock" action="/livredor.php" method="post">
           <div class="form-group ">
             <label class="control-label text-light" for="name">Nom:</label>
             <input class="form-control" id="name" name="name">
           <div class="form-group ">
           </div>
             <label class="control-label text-light col-sm-offset-2" for="email">Email:</label>
-            <input type="email" class="form-control" id="email" >
+            <input type="email" class="form-control" id="email" name="email">
           </div>
           <div class="form-group">
             <label class="control-label text-light" for="pwd">Message:</label>
