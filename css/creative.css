@@ -288,8 +288,10 @@ header.masthead p {
 }
 
 .text-primary {
-  /*color: #F05F40 !important;*/
-  color: #FFFFFF !important;
+  color: #000000 !important;
+  /*color: #FFFFFF !important;*/
+  /*color: #F7F8E0 !important;*/
+
 }
 
 .text-secondary {
