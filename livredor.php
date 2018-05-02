@@ -116,7 +116,58 @@
         }
     }
 
+    // --------------- Etape 2 -----------------
+    // On écrit les liens vers chacune des pages
+    // -----------------------------------------
+    // On met dans une variable le nombre de messages qu'on veut par page
+    $nombreDeMessagesParPage = 3;
+    // On récupère le nombre total de messages
+    $result = mysqli_query($conn, 'select count(*) as NB_MESSAGES from hrs_livre_d_or');
+    $donnees = mysqli_fetch_assoc($result);
+    $totalDesMessages = $donnees['NB_MESSAGES'];
+    // On calcule le nombre de pages à créer
+    $nombreDePages  = ceil($totalDesMessages / $nombreDeMessagesParPage);
 
+    if (isset($_GET['index'])) {
+      $page = $_GET['index'];
+    }
+    else {
+      $page = 1; // On se met sur la page 1 (par défaut)
+    }
+
+    // On calcule le numéro du premier message qu'on prend pour le LIMIT de MySQL
+    $premierMessageAafficher = ($page - 1) * $nombreDeMessagesParPage;
+
+    // Récupération des messages dans la base de donénes
+    $reponse = mysqli_query($conn, 'select * from hrs_livre_d_or order by ldo_date desc limit ' . $premierMessageAafficher . ', ' . $nombreDeMessagesParPage);
+
+    // Nombre de messages récupérés
+    $nb_messages = mysqli_num_rows($reponse);
+
+    // Parcours des messages lus en base
+    while ($donnees = mysqli_fetch_assoc($reponse)) {
+        echo '<div class="bloc_message_livredor">
+                  <p class="nom_livredor">'.stripslashes($donnees['ldo_nom']).'</p>
+                  <p class="message_livredor">'.stripslashes(nl2br($donnees['ldo_message'])) . '</p>
+              </div>';
+        }
+
+
+    // On affiche les pages si il y en a plusieurs 
+    if($nombreDePages > 1) {
+      echo '<p class="page_livredor">Page : ';
+      for ($i = 1 ; $i <= $nombreDePages ; $i++) {
+        if ($page == $i) {
+          echo '<a href="livredor.php?index=' . $i . '"><strong>' . $i . '</strong>  </a>';
+        } else {
+          echo '<a href="livredor.php?index=' . $i . '">' . $i . '  </a> ';
+        }
+      }
+      echo '</p>';
+    }
+
+    // On n'oublie pas de fermer la connexion à MySQL
+    mysqli_close($conn);
 
 ?>
         </div>
