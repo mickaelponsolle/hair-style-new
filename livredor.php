@@ -34,7 +34,6 @@
   </head>
 
   <body class="bg-dark" id="page-top">
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-default  text-primary fixed-top" id="livredorNav">
       <div class="container">
@@ -74,19 +73,8 @@
     // Analyse des paramètres de la base de donnée
     $ini_array = parse_ini_file("config.ini", TRUE);
 
-echo '<p class="text-light">hote='.$ini_array["bdd"]["hote"].'</p>';
-echo '<p class="text-light">utilisateur='.$ini_array["bdd"]["utilisateur"].'</p>';
-echo '<p class="text-light">motdepasse='.$ini_array["bdd"]["motdepasse"].'</p>';
-echo '<p class="text-light">basededonnee='.$ini_array["bdd"]["basededonnee"].'</p>';
-
     // Connexion à la base de donnée
     $conn=mysqli_connect($ini_array["bdd"]["hote"], $ini_array["bdd"]["utilisateur"], $ini_array["bdd"]["motdepasse"], $ini_array["bdd"]["basededonnee"]) or die("Impossible de se connecter : ".mysql_error());   
-
-    var_dump($_POST);
-
-echo '<p class="text-light">name='.$_POST['name'].'</p>';
-echo '<p class="text-light">email='.$_POST['email'].'</p>';
-echo '<p class="text-light">message='.$_POST['message'].'</p>';
 
     if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['message'])) {
         $nom = mysqli_real_escape_string($conn, htmlspecialchars($_POST['name']));
@@ -119,7 +107,10 @@ echo '<p class="text-light">message='.$_POST['message'].'</p>';
             require_once("util_mail.php");
 
             // Envoi du mail
-            envoi_mail2(htmlspecialchars($_POST['email']), "Message dans Livre d'or", stripslashes($corpsMail));
+            $result2 = envoi_mail2(htmlspecialchars($_POST['email']), "Message dans Livre d'or", stripslashes($corpsMail));
+            if (!$result2) {
+              die('Envoi mail KO');
+            }
 
           }
         }
