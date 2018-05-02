@@ -146,8 +146,8 @@
 
     // Parcours des messages lus en base
     while ($donnees = mysqli_fetch_assoc($reponse)) {
-        echo '<div class="bloc_message_livredor">
-                  <p class="nom_livredor">'.stripslashes($donnees['ldo_nom']).'</p>
+        echo '<div class="alert alert-primary">
+                  <h4 class="alert-heading">'.stripslashes($donnees['ldo_nom']).'</h4>
                   <p class="message_livredor">'.stripslashes(nl2br($donnees['ldo_message'])) . '</p>
               </div>';
         }
@@ -155,7 +155,7 @@
 
     // On affiche les pages si il y en a plusieurs 
     if($nombreDePages > 1) {
-      echo '<p class="page_livredor">Page : ';
+      /*echo '<p class="page_livredor">Page : ';
       for ($i = 1 ; $i <= $nombreDePages ; $i++) {
         if ($page == $i) {
           echo '<a href="livredor.php?index=' . $i . '"><strong>' . $i . '</strong>  </a>';
@@ -164,6 +164,19 @@
         }
       }
       echo '</p>';
+*/
+      echo '<nav class="navbar  bg-dark navbar-dark">
+              <ul class="pagination">';
+      for ($i = 1 ; $i <= $nombreDePages ; $i++) {
+        if ($page == $i) {
+          echo '<li class="page-item active"><a class="page-link" href="livredor.php?index=' . $i . '">'. $i .'</a></li>';
+        } else {
+          echo '<li class="page-item"><a class="page-link" href="livredor.php?index=' . $i . '">'. $i .'</a></li>';
+        }
+      }
+      echo '
+          </ul>
+        </nav>';
     }
 
     // On n'oublie pas de fermer la connexion à MySQL
