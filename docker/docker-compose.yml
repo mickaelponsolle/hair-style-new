@@ -1,24 +1,36 @@
-hairstyle-new:
-  build: site
-  ports :
-   - "180:80"
-  volumes:
-   - ..:/var/www/html/
-database:
-  image: mysql:5.5
-  ports:
-   - "3306:3306"  
-  environment:
-     - MYSQL_ROOT_PASSWORD=password
-     - MYSQL_DATABASE=hair-style
-     - MYSQL_USER=hair-style
-     - MYSQL_PASSWORD=password
-phpmyadmin:
-   image: corbinu/docker-phpmyadmin
-   ports :
-    - "8080:80"
-   environment:
-    - MYSQL_USERNAME=root
-    - MYSQL_PASSWORD=password
-   links:
-    - database:mysql
+version: "2.3"
+services: 
+  hairstyle-new:
+    build: site
+    ports :
+     - "180:80"
+    volumes:
+     - ..:/var/www/html/
+    networks:
+      - database-network
+  database:
+    image: mysql:5.5
+    ports:
+     - "3306:3306"  
+    environment:
+       - MYSQL_ROOT_PASSWORD=password
+       - MYSQL_DATABASE=hair-style
+       - MYSQL_USER=hair-style
+       - MYSQL_PASSWORD=password
+  
+    networks:
+      database-network:
+        aliases:
+          - db
+  phpmyadmin:
+     image: corbinu/docker-phpmyadmin
+     ports :
+      - "8080:80"
+     environment:
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=password
+     links:
+      - database:mysql
+networks:
+  database-network:
+    driver: bridge
