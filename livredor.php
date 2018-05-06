@@ -37,23 +37,23 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-default  text-primary fixed-top" id="livredorNav">
       <div class="container">
-        <a class="navbar-brand " href="/#page-top">Hair Style</a>
+        <a class="navbar-brand " href="/index.php#page-top">Hair Style</a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link " href="/#mobilite">Mobilité</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/#tarifs">Tarifs</a>
+              <a class="nav-link js-scroll-trigger" href="/index.php#tarifs">Tarifs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="/index.php#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#livredor">Livre d'or</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="/index.php#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -169,9 +169,9 @@
               <ul class="pagination">';
       for ($i = 1 ; $i <= $nombreDePages ; $i++) {
         if ($page == $i) {
-          echo '<li class="page-item active"><a class="page-link" href="livredor.php?index=' . $i . '">'. $i .'</a></li>';
+          echo '<li class="page-item active"><a class="page-link" href="./livredor.php?index=' . $i . '">'. $i .'</a></li>';
         } else {
-          echo '<li class="page-item"><a class="page-link" href="livredor.php?index=' . $i . '">'. $i .'</a></li>';
+          echo '<li class="page-item"><a class="page-link" href="./livredor.php?index=' . $i . '">'. $i .'</a></li>';
         }
       }
       echo '

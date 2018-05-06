@@ -18,46 +18,53 @@
     <title>Hair Style - Coiffure à domicile</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="./vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.css" rel="stylesheet">
+    <link href="./css/creative.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
+<?php
+    // Analyse des paramètres de la base de donnée
+    $ini_array = parse_ini_file("config.ini", TRUE);
+
+    // Connexion à la base de donnée
+    $context = $ini_array["appli"]["context"];
+?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Hair Style</a>
+        <a class="navbar-brand js-scroll-trigger" href="./index.php#page-top">Hair Style</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#mobilite">Mobilité</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#mobilite">Mobilité</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#tarifs">Tarifs</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#tarifs">Tarifs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="livredor.php">Livre d'or</a>
+              <a class="nav-link js-scroll-trigger" href="./livredor.php">Livre d'or</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -82,7 +89,7 @@
               <p class="text-secondary mb-4">Pas le temps d'aller dans un salon de coiffure ?<br/>
 Emilie vous propose ses services pour toute coupe de cheveux, mèches et coloration chez vous. </p>
             </strong>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#tarifs">Prestations</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="./index.php#tarifs">Prestations</a>
           </div>
         </div>
       </div>
@@ -181,38 +188,38 @@ Emilie vous propose ses services pour toute coupe de cheveux, mèches et colorat
         </div>
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo2.jpg">
-              <img class="img-fluid" src="img/photo2.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo2.jpg">
+              <img class="img-fluid" src="./img/photo2.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo3.jpg">
-              <img class="img-fluid" src="img/photo3.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo3.jpg">
+              <img class="img-fluid" src="./img/photo3.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo4.jpg">
-              <img class="img-fluid" src="img/photo4.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo4.jpg">
+              <img class="img-fluid" src="./img/photo4.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo5.jpg">
-              <img class="img-fluid" src="img/photo5.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo5.jpg">
+              <img class="img-fluid" src="./img/photo5.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo8.jpg">
-              <img class="img-fluid" src="img/photo8.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo8.jpg">
+              <img class="img-fluid" src="./img/photo8.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo9.jpg">
-              <img class="img-fluid" src="img/photo9.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo9.jpg">
+              <img class="img-fluid" src="./img/photo9.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/photo10.jpg">
-              <img class="img-fluid" src="img/photo10.jpg" alt="">
+            <a class="portfolio-box" href="./img/photo10.jpg">
+              <img class="img-fluid" src="./img/photo10.jpg" alt="">
             </a>
           </div>
         </div>
