@@ -37,23 +37,23 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-default  text-primary fixed-top" id="livredorNav">
       <div class="container">
-        <a class="navbar-brand " href="/index.php#page-top">Hair Style</a>
+        <a class="navbar-brand " href="./index.php#page-top">Hair Style</a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link " href="/#mobilite">Mobilité</a>
+              <a class="nav-link " href="./index.php#mobilite">Mobilité</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/index.php#tarifs">Tarifs</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#tarifs">Tarifs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/index.php#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#livredor">Livre d'or</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/index.php#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="./index.php#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -186,7 +186,7 @@
         </div>
         <hr class="my-4">
         <p class="mb-5 text-light">Vous pouvez ajouter un commentaire dans le livre d'or avec le formulaire suivant : </p>
-        <form class="form-horizontal" role="form" id="addCommentBlock" action="/livredor.php" method="post">
+        <form class="form-horizontal" role="form" id="addCommentBlock" action="./livredor.php" method="post">
           <div class="form-group ">
             <label class="control-label text-light" for="name">Nom:</label>
             <input class="form-control" id="name" name="name">

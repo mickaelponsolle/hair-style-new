@@ -35,13 +35,6 @@
 
   <body id="page-top">
 
-<?php
-    // Analyse des paramètres de la base de donnée
-    $ini_array = parse_ini_file("config.ini", TRUE);
-
-    // Connexion à la base de donnée
-    $context = $ini_array["appli"]["context"];
-?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
