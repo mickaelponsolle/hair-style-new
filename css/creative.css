@@ -19,16 +19,24 @@ hr.light {
 }
 
 a {
-  /*color: #f05f40;*/
-  color: #ffffff;
+  color: #f05f40;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
+  text-shadow: 2px 0 0 #555, -2px 0 0 #555, 0 2px 0 #555, 0 -2px 0 #555, 1px 1px #555, -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555;
+}
+
+a.text-dark, a.page-link {
+  color: #f05f40;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  text-shadow: none;
 }
 
 a:hover {
-  /*color: #f05f40;*/
-  color: #ffffff;
+  color: #f05f40;
+  /*color: #ffffff;*/
 }
 
 h1,
@@ -117,7 +125,7 @@ img::-moz-selection {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #212529;
+  color: #ADABAB;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
@@ -145,7 +153,8 @@ img::-moz-selection {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    /*color: rgba(255, 255, 255, 0.7);*/
+    color: #f05F40;
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
     color: #F05F40;
@@ -156,8 +165,8 @@ img::-moz-selection {
   #mainNav .navbar-nav > li.nav-item > a.nav-link,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
     /* color: rgba(255, 255, 255, 0.7); */
-    /*color: #f05F40;*/
-    color: #ffffff;
+    color: #f05F40;
+    /*color: #ffffff;*/
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
@@ -175,7 +184,7 @@ img::-moz-selection {
   }
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
-    color: #212529;
+    color: #ADABAB;
   }
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
@@ -300,14 +309,17 @@ header.masthead p {
 }
 
 .text-primary {
-  color: #000000 !important;
+  color: #F05F40 !important;
   /*color: #FFFFFF !important;*/
   /*color: #F7F8E0 !important;*/
+  text-shadow: 2px 0 0 #555, -2px 0 0 #555, 0 2px 0 #555, 0 -2px 0 #555, 1px 1px #555, -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555;
 
 }
 
 .text-secondary {
   color: #F05F40 !important;
+  /*color: #843131 !important;*/
+  text-shadow: 1px 0 0 #555, -1px 0 0 #555, 0 1px 0 #555, 0 -1px 0 #555, 1px 1px #555, -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555;
 }
 
 .btn {
